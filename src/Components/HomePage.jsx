@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AppState } from "../App";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import "./Homepage.css";
 import axios from "../axiosConfig";
 function HomePage() {
   const { questionId } = useParams();
