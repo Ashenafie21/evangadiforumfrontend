@@ -16,7 +16,7 @@ function AnswerPage() {
 
     useEffect(() => {
         // Redirect to login if user is not logged in and questionId is not available
-        if ((!user || !user.consumerid) && !questionId) {
+        if ((!user || !user.consumerid)) {
             navigate("/login");
         }
     }, [user, questionId, navigate]);
