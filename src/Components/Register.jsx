@@ -32,7 +32,7 @@ function Register() {
 
       if (!emptyFields) {
         try {
-          await axios.post("/consumers/register", {
+          await axios.post("/api/consumers/register", {
             username: usernameValue,
             firstname: firstnameValue,
             lastname: lastnameValue,

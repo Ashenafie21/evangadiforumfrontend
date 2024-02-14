@@ -40,7 +40,7 @@ useEffect(() => {
 
       // Make the POST request
       const response = await axios.post(
-        "/questions/allquestions",
+        "/api/questions/allquestions",
         { title, description, consumerid: user.consumerid },
         {
           headers: {
@@ -53,12 +53,12 @@ useEffect(() => {
       // Use the response data here if needed
       // const responseData = response.data;
       const insertedQuestionId = response.data.questionId;
-      console.log(insertedQuestionId);
+      console.log('Inserted Question ID:', insertedQuestionId);
       // Store the questionId in localStorage
       localStorage.setItem("currentQuestionId", insertedQuestionId);
 
       // Update the navigation
-      navigate(`/answer/${insertedQuestionId}`);
+      navigate(`/api/answer/${insertedQuestionId}`);
     } catch (error) {
       console.error("Error posting question:", error);
     }

@@ -17,14 +17,14 @@ function App() {
 // console.log(token);
   async function checkUser() {
     try {
-      const { data } = await axios.get("consumers/check", {
+      const { data } = await axios.get("/api/consumers/check", {
         headers: {
           Authorization: "Bearer " + token,
         },
       });
       setUser(data);
     } catch (error) {
-      console.log(error.response.data.msg);
+      console.log(error?.response?.data?.msg);
       navigate("/login");
     }
   }
